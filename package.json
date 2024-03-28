@@ -1,0 +1,31 @@
+{
+  "name": "play-ts-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npx ts-node src/helper/init.ts",
+    "test": "cucumber-js --config=config/cucumber.js || true",
+    "posttest": "npx ts-node src/helper/report.ts",
+    "test:failed": "cucumber-js --config=config/cucumber.js -p rerun @rerun.txt"
+  },
+  "keywords": [
+    "cucumber",
+    "cucumber - TS",
+    "playwright-cucumber"
+  ],
+  "author": "Hannan",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@playwright/test": "^1.41.1",
+    "@types/node": "^20.11.5",
+    "fs-extra": "^11.2.0",
+    "multiple-cucumber-html-reporter": "^3.6.1",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "dotenv": "^16.4.1"
+  }
+}
